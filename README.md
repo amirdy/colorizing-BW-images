@@ -39,35 +39,41 @@ The images have not a same dimensions and the average dimension of images is :
 ## Generator : 
 
 - ### Input:
-  - Batch of image [just channel **L**]
-    - A Tensor of shape (\*, 1, 768, 768) 
-   
-      - \* : Batch Size
-    
+  - A Batch of images [just channel **L**]
+    - A Tensor of shape : (Batch size, 1, 768, 768) 
+       
 - ### Output:
   - The predicted values of the channels **a** and **b**
   
-    - A Tensor of shape (\*, 2, 768, 768)
+    - A Tensor of shape : (Batch size, 2, 768, 768)
 
 - ### Structure:
   - Unet 
 
     - Encoder : EfficientNet-b5
 
-    - use ImageNet pretrained weights
+    - ImageNet pretrained weights were used
 
-    - 
-    
+      - Input channel was set to 1 
 
+      - Output channel was set to 1 
+
+
+ Thus Generator produces the colored image. Infact, the L channel was concatened to ab channel drived from the generator and the colored image was obtained. 
 
 ## Discriminator : 
 
 - ### Input:
-  - A Tensor of shape (\*x2, 3+3, 768, 768) 
+  - A Batch of images which contains the original image (in *Lab* color space) and the images drived form the generator.
+    - A Tensor of shape : (Batch size*2, 3, 768, 768) 
    
 
 - ### Output:
-  - A Tensor of shape (\*2, 1, 94, 94)
+  - The predicted values of the channels **a** and **b**
+  
+    - A Tensor of shape : (Batch size, 1, 94, 94)
+      
+      - The values of the tensor, determ
 
 - ### Structure:
 
