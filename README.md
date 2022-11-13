@@ -33,9 +33,9 @@ The images have different dimensions. The average dimension is (688 x 688).
  
  -  For all values in the a or b channels like x:
 
-      <img src="ab_Normalization.png"  width='180' >
+      <img src="ab_Normalization.png"  width='90' >
 
-   (These two steps led to having a 3 dimnetional matrix in which all the values are in the range of [-1,1])
+ -  (These two steps led to having a 3-dimensional matrix (a tensor of the image in Lab color space) in which all the values are in the range of [-1,1])
  
 
 # Network
