@@ -27,10 +27,14 @@ The images have different dimensions. The average dimension is (688 x 688).
       In the Lab color space only the second(b) and third(b) channels color the image. Thus, for the training of the Generator, the L channel can be ignored. Removing      one channel definitely makes the problem easier.
 
 4- At the end, some sort of normalization was taken:
- - All of the values in L channel first divided by 50 and then minus by 1 
+ - For all values in the L channel like x:
  
- - All of the values in a and b channels divided by 128
+      <img src="L_Normalization.png"  width='120' >
  
+ -  For all values in the a or b channels like x:
+
+      <img src="ab_Normalization.png"  width='180' >
+
    (These two steps led to having a 3 dimnetional matrix in which all the values are in the range of [-1,1])
  
 
