@@ -11,21 +11,20 @@
 
 ## Dataset 
 
-This dataset consists of about **5,000** of people images including family portrait, wedding portrait and so on:
+This dataset consists of about **5,000** people's images including family portraits, wedding portraits, and so on.
 - [The Images of Groups Dataset (Cornel University)](http://chenlab.ece.cornell.edu/people/Andy/ImagesOfGroups.html)
 
-The images have not a same dimensions and the average dimension of images is : 
+The images have different dimensions. The average dimension is (688 x 688).
 
 ## Preprocessing
-1- The Black&White images were removed from the dataset.
+1- The Black & White images were removed from the dataset.
 
 2- The dimension of the images was changed to (768 x 768).
 
 3- These RGB color space images were converted to Lab color space images.
   
   - Why?
-      In the Lab color space, only the second(b) and third(b) channels control the colorization of the image. thus, for training of the Generator
-      the L channel can be ignored. Removing one channel defenitely makes the problem easier.
+      In the Lab color space only the second(b) and third(b) channels color the image. Thus, for the training of the Generator, the L channel can be ignored. Removing      one channel definitely makes the problem easier.
 
 4- At the end, some sort of normalization was taken:
  - All of the values in L channel first divided by 50 and then minus by 1 
