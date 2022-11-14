@@ -24,14 +24,14 @@ The images have different dimensions. The average dimension is (688 x 688).
 3- These RGB color space images were converted to **Lab** color space images.
   
   - Why?
-      In the Lab color space only the second(**a**) and third(**b**) channels color the image. Thus, for the training of the Generator, the **L** channel can be ignored. Removing      one channel definitely makes the problem easier.
+      In the Lab color space only the second(**a**) and third(**b**) channels color the image. Thus, for the training of the Generator, the **L-channel**  can be ignored. Removing      one channel definitely makes the problem easier.
 
 4- At the end, some sort of normalization was taken:
- - For all values in the **L** channel like x:
+ - For all values in the **L-channel** like x:
  
       <img src="L_Normalization.png"  width='120' >
  
- -  For all values in the **a** or **b** channels like x:
+ -  For all values in the **a-channel** or **b-channel** like x:
 
       <img src="ab_Normalization.png"  width='90' >
 
@@ -40,13 +40,15 @@ The images have different dimensions. The average dimension is (688 x 688).
 
 # Network
 ## Generator : 
+- ### Goal:
+  - Takes the **L-channel** of the image as an input and generates the **ab-channels** as an output.
 
 - ### Input:
-  - A batch of images [just channel **L**]
+  - A batch of images [**L-channel**]:
     - A tensor of shape : (Batch size, 1, 768, 768) 
        
 - ### Output:
-  - The predicted values for the channels **a** and **b**
+  - The predicted values [**ab-channels**]:
   
     - A Tensor of shape : (Batch size, 2, 768, 768)
 
@@ -62,7 +64,7 @@ The images have different dimensions. The average dimension is (688 x 688).
       - The output channel was set to 2. 
 
 
-  The **L** channel concatenates to **a** and **b** channels generated from the generator, and the colored image is obtained.  Therefore the generator generates the colored image.
+  The **L-channel**  concatenates to **ab-channels**  generated from the generator, and the colored image is obtained.  Therefore the generator generates the colored image.
 
 ## Discriminator : 
 
