@@ -1,7 +1,7 @@
 <ins>[Preview](#preview)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Details of Implementation](#Details-of-Implementation)</ins>&nbsp;&nbsp;&nbsp;
-<ins>[Network](#Network)</ins>&nbsp;&nbsp;&nbsp;
-<ins>[Hyperparameters and Tools](#Hyperparameters-and-Tools)</ins>&nbsp;&nbsp;&nbsp;
+<ins>[Network](#Networks)</ins>&nbsp;&nbsp;&nbsp;
+<ins>[Hyperparameters, Losses and Tools](#Hyperparameters-and-Tools)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Results](#Results)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[References](#References)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Useful Resources](#Useful-Resources)</ins>&nbsp;&nbsp;&nbsp;
@@ -33,12 +33,12 @@ The images have different dimensions. The average dimension is (688 x 688).
  
  -  For all values in the **a-channel** or **b-channel** like x:
 
-      <img src="ab_Normalization.png"  width='90' >
+      <img src="ab_Normalization.png"  width='80' >
 
  -  (These two steps led to having a 3-dimensional matrix (a tensor of the image in **Lab** color space) in which all the values are in the range of [-1,1])
  
 
-# Network
+# Networks
 ## Generator : 
 - ### Goal:
   - Takes the **L-channel** of the image as an input and generates the **ab-channels** as an output.
@@ -69,16 +69,24 @@ The images have different dimensions. The average dimension is (688 x 688).
 ## Discriminator : 
 - ### Goal:
   - Takes an image(in **Lab** color space) and then generates a 2-dimensional matrix (94 x 94) in which each value represents that the corresponding part of the image is real or fake (a number that indicates the probability of being Real)
-- ### Input:
-  - A batch of images that contains the original images (in a **Lab** color space) and the images generated from the generator:
-    - A tensor of shape : (Batch size*2, 3, 768, 768) 
-   
+- ### In the Training phase of the Discriminator:
+  - #### Input 
+    - A batch of images that contains the original images (in a **Lab** color space) and the images generated from the generator:
+      - A tensor of shape : (Batch size*2, 3, 768, 768) 
+  - #### Output:
+    - The generated matrix:
+      - A tensor of shape : (Batch size*2, 1, 94, 94)
+     
+- ### In the Training phase of the Generator:
+  - #### Input 
+    - A batch of images generated from the generator:
+      - A tensor of shape : (Batch size, 3, 768, 768) 
+  - #### Output:
+    - The generated matrix:
+      - A tensor of shape : (Batch size, 1, 94, 94)
 
-- ### Output:
-  - The generated matrix:
-  
-    - A tensor of shape : (Batch size*2, 1, 94, 94)
-      
+
+    
 - ### Structure:
 ```
        (1) Conv → BN → ReLU
@@ -86,20 +94,26 @@ The images have different dimensions. The average dimension is (688 x 688).
        (3) Conv → BN → ReLU 
        (4) Conv → BN → ReLU 
        (5) Conv → Sigmoid
+       
+       (Please check the source code for more information, especially the number of filters and their sizes)
 ```
-# Hyperparameters and Tools
+
+# Hyperparameters, Losses and Tools
 - #### Batch size: 
    - 3 
-- #### Optimizers: 
-   - Generator: ADAM | Learning rate : 0.001
-   - Discriminator: ADAM | Learning rate : 0.001
 
-- #### Weight Decay: 
-   - 0.0001
-- #### Loss: 
-   - Cross entropy
-- #### Train vs Validation Split: 
-   - Approximately : 0.78 | 0.22  
+- #### In the Training phase of the Discriminator:
+  - ##### Optimizer: 
+     - ADAM (Learning rate : 0.001)
+   - ##### Loss:
+     - BCE
+- #### In the Training phase of the Generator:
+  - ##### Optimizer: 
+     - ADAM (Learning rate : 0.001)
+   - ##### Loss:
+     - BCE
+- #### Train vs Test Split: 
+   - Approximately : 0.9 | 0.1 
 - #### Tools: 
    - Python - Pytorch ( Using Google Colab Pro )
 
