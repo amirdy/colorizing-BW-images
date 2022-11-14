@@ -21,10 +21,10 @@ The images have different dimensions. The average dimension is (688 x 688).
 
 2- The dimension of the images was changed to (768 x 768).
 
-3- These RGB color space images were converted to Lab color space images.
+3- These RGB color space images were converted to **Lab** color space images.
   
   - Why?
-      In the Lab color space only the second(b) and third(b) channels color the image. Thus, for the training of the Generator, the L channel can be ignored. Removing      one channel definitely makes the problem easier.
+      In the Lab color space only the second(**a**) and third(**b**) channels color the image. Thus, for the training of the Generator, the **L** channel can be ignored. Removing      one channel definitely makes the problem easier.
 
 4- At the end, some sort of normalization was taken:
  - For all values in the L channel like x:
@@ -35,7 +35,7 @@ The images have different dimensions. The average dimension is (688 x 688).
 
       <img src="ab_Normalization.png"  width='90' >
 
- -  (These two steps led to having a 3-dimensional matrix (a tensor of the image in Lab color space) in which all the values are in the range of [-1,1])
+ -  (These two steps led to having a 3-dimensional matrix (a tensor of the image in **Lab** color space) in which all the values are in the range of [-1,1])
  
 
 # Network
@@ -62,7 +62,7 @@ The images have different dimensions. The average dimension is (688 x 688).
       - The output channel was set to 2. 
 
 
-  The L channel concatenates to ab channels generated from the generator, and the colored image is obtained.  Therefore the generator generates the colored image.
+  The **L** channel concatenates to **a** and **b** channels generated from the generator, and the colored image is obtained.  Therefore the generator generates the colored image.
 
 ## Discriminator : 
 
