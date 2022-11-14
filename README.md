@@ -50,7 +50,7 @@ The images have different dimensions. The average dimension is (688 x 688).
 - ### Output:
   - The predicted values [**ab-channels**]:
   
-    - A Tensor of shape : (Batch size, 2, 768, 768)
+    - A tensor of shape : (Batch size, 2, 768, 768)
 
 - ### Structure:
   - Unet<sup>1</sup>
@@ -67,19 +67,18 @@ The images have different dimensions. The average dimension is (688 x 688).
   The **L-channel**  concatenates to **ab-channels**  generated from the generator, and the colored image is obtained.  Therefore the generator generates the colored image.
 
 ## Discriminator : 
-
+- ### Goal:
+  - Takes an image(in **Lab** color space) and then generates a 2-dimensional matrix (94 x 94) in which each value represents that the corresponding part of the image is real or fake (a number that indicates the probability of being Real)
 - ### Input:
-  - A Batch of images which contains the original image (in a *Lab* color space) and the images drived form the generator.
-    - A Tensor of shape : (Batch size*2, 3, 768, 768) 
+  - A batch of images that contains the original image (in a **Lab** color space) and the images generated from the generator:
+    - A tensor of shape : (Batch size*2, 3, 768, 768) 
    
 
 - ### Output:
-  - The predicted values of the channels **a** and **b**
+  - The generated matrix:
   
-    - A Tensor of shape : (Batch size, 1, 94, 94)
+    - A tensor of shape : (Batch size*2, 1, 94, 94)
       
-      - The values of the tensor, determ
-
 - ### Structure:
 
 
