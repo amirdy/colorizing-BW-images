@@ -1,7 +1,7 @@
 <ins>[Preview](#preview)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Details of Implementation](#Details-of-Implementation)</ins>&nbsp;&nbsp;&nbsp;
-<ins>[Network](#Networks)</ins>&nbsp;&nbsp;&nbsp;
-<ins>[Hyperparameters, Losses and Tools](#Hyperparameters-and-Tools)</ins>&nbsp;&nbsp;&nbsp;
+<ins>[Networks](#Networks)</ins>&nbsp;&nbsp;&nbsp;
+<ins>[Hyperparameters Losses Tools](#Hyperparameters-Losses-Tools)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Results](#Results)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[References](#References)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Useful Resources](#Useful-Resources)</ins>&nbsp;&nbsp;&nbsp;
@@ -98,7 +98,7 @@ The images have different dimensions. The average dimension is (688 x 688).
        (Please check the source code for more information, especially the number of filters and their sizes)
 ```
 
-# Hyperparameters, Losses and Tools
+# Hyperparameters Losses and Tools
 - #### Batch size: 
    - 3 
 
