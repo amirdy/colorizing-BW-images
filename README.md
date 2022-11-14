@@ -70,7 +70,7 @@ The images have different dimensions. The average dimension is (688 x 688).
 - ### Goal:
   - Takes an image(in **Lab** color space) and then generates a 2-dimensional matrix (94 x 94) in which each value represents that the corresponding part of the image is real or fake (a number that indicates the probability of being Real)
 - ### Input:
-  - A batch of images that contains the original image (in a **Lab** color space) and the images generated from the generator:
+  - A batch of images that contains the original images (in a **Lab** color space) and the images generated from the generator:
     - A tensor of shape : (Batch size*2, 3, 768, 768) 
    
 
@@ -80,10 +80,13 @@ The images have different dimensions. The average dimension is (688 x 688).
     - A tensor of shape : (Batch size*2, 1, 94, 94)
       
 - ### Structure:
-
-
-
-
+```
+       (1) Conv → BN → ReLU
+       (2) Conv → BN → ReLU 
+       (3) Conv → BN → ReLU 
+       (4) Conv → BN → ReLU 
+       (5) Conv → Sigmoid
+```
 # Hyperparameters and Tools
 - #### Batch size: 
    - 3 
