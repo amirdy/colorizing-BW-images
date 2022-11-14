@@ -42,32 +42,32 @@ The images have different dimensions. The average dimension is (688 x 688).
 ## Generator : 
 
 - ### Input:
-  - A Batch of images [just channel **L**]
-    - A Tensor of shape : (Batch size, 1, 768, 768) 
+  - A batch of images [just channel **L**]
+    - A tensor of shape : (Batch size, 1, 768, 768) 
        
 - ### Output:
-  - The predicted values of the channels **a** and **b**
+  - The predicted values for the channels **a** and **b**
   
     - A Tensor of shape : (Batch size, 2, 768, 768)
 
 - ### Structure:
-  - Unet 
+  - Unet<sup>1</sup>
 
     - Encoder : EfficientNet-b5
 
-    - ImageNet pretrained weights were used
+    - ImageNet pre-trained weights were used.
 
-      - Input channel was set to 1 
+      - The input channel was set to 1. 
 
-      - Output channel was set to 1 
+      - The output channel was set to 2. 
 
 
- Thus Generator produces the colored image. Infact, the L channel was concatened to ab channel drived from the generator and the colored image was obtained. 
+  The L channel concatenates to ab channels generated from the generator, and the colored image is obtained.  Therefore the generator generates the colored image.
 
 ## Discriminator : 
 
 - ### Input:
-  - A Batch of images which contains the original image (in *Lab* color space) and the images drived form the generator.
+  - A Batch of images which contains the original image (in a *Lab* color space) and the images drived form the generator.
     - A Tensor of shape : (Batch size*2, 3, 768, 768) 
    
 
@@ -99,6 +99,6 @@ The images have different dimensions. The average dimension is (688 x 688).
 - #### Tools: 
    - Python - Pytorch ( Using Google Colab Pro )
 
-
-
+# References
+[1] [Segmentation Models Pytorch - Pavel Iakubovskii](https://github.com/qubvel/segmentation_models.pytorch)
 
