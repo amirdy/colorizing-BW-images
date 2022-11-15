@@ -5,6 +5,9 @@
 <ins>[Results](#Results)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[References](#References)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Useful Resources](#Useful-Resources)</ins>&nbsp;&nbsp;&nbsp;
+
+The goal of this project is to color the black and white family portraits. This project is based on the deep learning concepts and uses 
+**Pix2Pix GAN** which is a general approach for image-to-image translation.
 # Preview
 
 # Details of Implementation
@@ -105,23 +108,30 @@ The images have different dimensions. The average dimension is (688 x 688).
    - Approximately : 0.9 | 0.1 
 - #### In the Training phase of the Discriminator:
   - ##### Optimizer: 
-     - ADAM (Learning rate : 0.001)
+     - ADAM [LR = 0.001]
    - ##### Loss:
-     - 0.5 . BCE(Discriminator<sub>output</sub>(X), Y)
+     - 0.5 . BCE(Discriminator(X), Y)
 
        - If X is a real image, then Y is a tensor in which all the values are 1. 
-       - If X is a fake image(the image is derived from the generator), then Y is a tensor in which all the values are 0.
+       - If X is a fake image (the image is derived from the generator), then Y is a tensor in which all the values are 0.
 - #### In the Training phase of the Generator:
   - ##### Optimizer: 
-     - ADAM (Learning rate : 0.001)
+     - ADAM [LR = 0.001]
    - ##### Loss:
-     - 0.5 . BCE(Discriminator<sub>output</sub>(X<sub>Generator</sub>), 1<sub>T</sub>) + 10 . |X<sub>Real</sub> - X<sub>Generator</sub>|<sub>1</sub>
+     - 0.5 . BCE(Discriminator(X<sub>Generator</sub>), 1<sub>T</sub>) + 10 . |X<sub>Real</sub> - X<sub>Generator</sub>|<sub>1</sub>
      
        - 1<sub>T</sub> is a tensor in which all the values are 1.
        - X<sub>Real</sub> is the real image, and X<sub>Generator</sub> is the fake colored version of  X<sub>Real</sub> derived from the generator.
 
 - #### Tools: 
    - Python - Pytorch (Using Google Colab Pro)
+
+# Results
+   Training finished after 46 epochs. In every 3 epochs, the weights of both networks were saved. 
+   
+   The Generator and Discriminator Losses at every epoch is shown in the figures below.
+
+
 
 # References
 [1] [Segmentation Models Pytorch - Pavel Iakubovskii](https://github.com/qubvel/segmentation_models.pytorch)
