@@ -1,7 +1,7 @@
 <ins>[Preview](#preview)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Details of Implementation](#Details-of-Implementation)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Networks](#Networks)</ins>&nbsp;&nbsp;&nbsp;
-<ins>[Hyperparameters Losses Tools](#Hyperparameters-Losses-Tools)</ins>&nbsp;&nbsp;&nbsp;
+<ins>[Hyperparameters - Losses - Tools](#Hyperparameters-Losses-Tools)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Results](#Results)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[References](#References)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Useful Resources](#Useful-Resources)</ins>&nbsp;&nbsp;&nbsp;
@@ -98,10 +98,11 @@ The images have different dimensions. The average dimension is (688 x 688).
        (Please check the source code for more information, especially the number of filters and their sizes)
 ```
 
-# Hyperparameters Losses and Tools
+# Hyperparameters - Losses - Tools
 - #### Batch size: 
    - 3 
-
+- #### Train vs Test Split: 
+   - Approximately : 0.9 | 0.1 
 - #### In the Training phase of the Discriminator:
   - ##### Optimizer: 
      - ADAM (Learning rate : 0.001)
@@ -118,10 +119,9 @@ The images have different dimensions. The average dimension is (688 x 688).
      
        - 1<sub>T</sub> is a tensor in which all the values are 1.
        - X<sub>Real</sub> is the real image, and X<sub>Generator</sub> is the fake colored version of  X<sub>Real</sub> derived from the generator.
-- #### Train vs Test Split: 
-   - Approximately : 0.9 | 0.1 
+
 - #### Tools: 
-   - Python - Pytorch ( Using Google Colab Pro )
+   - Python - Pytorch (Using Google Colab Pro)
 
 # References
 [1] [Segmentation Models Pytorch - Pavel Iakubovskii](https://github.com/qubvel/segmentation_models.pytorch)
