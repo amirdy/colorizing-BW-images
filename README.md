@@ -109,7 +109,7 @@ The images have different dimensions. The average dimension is (688 x 688).
      - 0.5 . BCE(Discriminator<sub>output</sub>(X), Y)
 
        - If X is a real image, then Y is a tensor in which all the values are 1. 
-       - If X is a fake image(i.e. the images is derived from the generator) , then Y is a tensor in which all the values are 0.
+       - If X is a fake image(the image is derived from the generator), then Y is a tensor in which all the values are 0.
 - #### In the Training phase of the Generator:
   - ##### Optimizer: 
      - ADAM (Learning rate : 0.001)
@@ -117,7 +117,7 @@ The images have different dimensions. The average dimension is (688 x 688).
      - 0.5 . BCE(Discriminator<sub>output</sub>(X<sub>Generator</sub>), 1<sub>T</sub>) + 10 . |X<sub>Real</sub> - X<sub>Generator</sub>|<sub>1</sub>
      
        - 1<sub>T</sub> is a tensor in which all the values are 1.
-       - X<sub>Real</sub> is the real image and X<sub>Generator</sub> is the output of the generator corresponds to the real image mentioned.
+       - X<sub>Real</sub> is the real image, and X<sub>Generator</sub> is the fake colored version of  X<sub>Real</sub> derived from the generator.
 - #### Train vs Test Split: 
    - Approximately : 0.9 | 0.1 
 - #### Tools: 
