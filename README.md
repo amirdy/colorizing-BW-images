@@ -17,7 +17,7 @@ The goal of this project is to color the black and white family portraits. This 
 This dataset consists of about **5,000** people's images including family portraits, wedding portraits, and so on.
 - [The Images of Groups Dataset (Cornel University)](http://chenlab.ece.cornell.edu/people/Andy/ImagesOfGroups.html)
 
-The images have different dimensions. The average dimension is (688 x 688).
+The images have different dimensions. The average dimension is (636 x 788).
 
 ## Preprocessing
 1- The Black & White images were removed from the dataset.
