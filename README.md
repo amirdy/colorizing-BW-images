@@ -32,11 +32,11 @@ The images have different dimensions. The average dimension is (688 x 688).
 4- At the end, some sort of normalization was taken:
  - For all values in the **L-channel** like x:
  
-      <img src="L_Normalization.png"  width='120' >
+      <img src="README_Files/L_Normalization.png"  width='120' >
  
  -  For all values in the **a-channel** or **b-channel** like x:
 
-      <img src="ab_Normalization.png"  width='80' >
+      <img src="README_Files/ab_Normalization.png"  width='80' >
 
  -  (These two steps led to having a 3-dimensional matrix (a tensor of the image in **Lab** color space) in which all the values are in the range of [-1,1])
  
@@ -131,6 +131,7 @@ The images have different dimensions. The average dimension is (688 x 688).
    
    The Generator and Discriminator Losses at every epoch is shown in the figures below.
 
+![alt text](README_Files/Discriminator_Loss.png) ![alt text](README_Files/Generator_Loss.png)
 
 
 # References
