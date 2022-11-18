@@ -1,7 +1,7 @@
 <ins>[Preview](#preview)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Details of Implementation](#Details-of-Implementation)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Networks](#Networks)</ins>&nbsp;&nbsp;&nbsp;
-<ins>[Hyperparameters - Losses - Tools](#Hyperparameters-Losses-Tools)</ins>&nbsp;&nbsp;&nbsp;
+<ins>[Hyperparameters \- Losses \- Tools](#Hyperparameters-Losses-Tools)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Results](#Results)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[References](#References)</ins>&nbsp;&nbsp;&nbsp;
 <ins>[Useful Resources](#Useful-Resources)</ins>&nbsp;&nbsp;&nbsp;
