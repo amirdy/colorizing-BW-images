@@ -142,3 +142,11 @@ The images have different dimensions. The average dimension is (636 x 788).
 # References
 [1] [Segmentation Models Pytorch - Pavel Iakubovskii](https://github.com/qubvel/segmentation_models.pytorch)
 
+# Useful Resources
+[1] [Understanding PatchGAN](https://sahiltinky94.medium.com/understanding-patchgan-9f3c8380c207)
+
+[2] [How to Develop a Pix2Pix GAN for Image-to-Image Translation](
+https://machinelearningmastery.com/how-to-develop-a-pix2pix-gan-for-image-to-image-translation/
+)
+
+
