@@ -9,6 +9,7 @@
 The goal of this project is to color the black and white family portraits. This project is based on the deep learning concepts and uses 
 **Pix2Pix GAN** which is a general approach for image-to-image translation.
 # Preview
+<img src="README_Files/sample_outputs.jpg"  width='620' >
 
 # Details of Implementation
 
