@@ -121,7 +121,7 @@ The images have different dimensions. The average dimension is (636 x 788).
      - ADAM 
        -  ##### Learning Rate : 0.001
    - ##### Loss:
-     - 0.5 . BCE(Discriminator(X<sub>Generator</sub>), 1<sub>T</sub>) + 10 . |X<sub>Real</sub> - X<sub>Generator</sub>|<sub>1</sub>
+     - BCE(Discriminator(X<sub>Generator</sub>), 1<sub>T</sub>) + 10 . |X<sub>Real</sub> - X<sub>Generator</sub>|<sub>1</sub>
      
        - 1<sub>T</sub> is a tensor in which all the values are 1.
        - X<sub>Real</sub> is the real image, and X<sub>Generator</sub> is the fake colored version of  X<sub>Real</sub> derived from the generator.
