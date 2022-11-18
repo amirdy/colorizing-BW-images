@@ -149,4 +149,4 @@ The images have different dimensions. The average dimension is (636 x 788).
 https://machinelearningmastery.com/how-to-develop-a-pix2pix-gan-for-image-to-image-translation/
 )
 
-
+[3][Colorizing black & white images](https://towardsdatascience.com/colorizing-black-white-images-with-u-net-and-conditional-gan-a-tutorial-81b2df111cd8)
